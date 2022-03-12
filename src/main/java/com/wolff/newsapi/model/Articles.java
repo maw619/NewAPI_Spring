@@ -4,9 +4,7 @@ import java.util.List;
 
 public class Articles {
 
-    private Long articlesId;
-
-    private List<Source>source;
+    private Source source;
 
     private String author;
 
@@ -18,26 +16,19 @@ public class Articles {
 
     private String urlToImage;
 
-    private String pubishedAt;
+    private String publishedAt;
 
     private String content;
 
     public Articles(){
     }
 
-    public Long getArticlesId() {
-        return articlesId;
-    }
 
-    public void setArticlesId(Long articlesId) {
-        this.articlesId = articlesId;
-    }
-
-    public List<Source> getSource() {
+    public Source getSource() {
         return source;
     }
 
-    public void setSource(List<Source> source) {
+    public void setSource(Source source) {
         this.source = source;
     }
 
@@ -81,12 +72,12 @@ public class Articles {
         this.urlToImage = urlToImage;
     }
 
-    public String getPubishedAt() {
-        return pubishedAt;
+    public String getPublishedAt() {
+        return publishedAt;
     }
 
-    public void setPubishedAt(String pubishedAt) {
-        this.pubishedAt = pubishedAt;
+    public void setPublishedAt(String publishedAt) {
+        this.publishedAt = publishedAt;
     }
 
     public String getContent() {
@@ -95,5 +86,19 @@ public class Articles {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    @Override
+    public String toString() {
+        return "Articles{" +
+                "source=" + source +
+                ", author='" + author + '\'' +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", url='" + url + '\'' +
+                ", urlToImage='" + urlToImage + '\'' +
+                ", publishedAt='" + publishedAt + '\'' +
+                ", content='" + content + '\'' +
+                '}';
     }
 }

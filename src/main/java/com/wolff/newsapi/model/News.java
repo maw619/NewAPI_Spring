@@ -9,13 +9,10 @@ public class News implements Serializable {
 
     private Long id;
 
-    @JsonProperty("status")
     private String status;
 
-    @JsonProperty("totalResults")
     private int totalResults;
 
-    @JsonProperty("articles")
     private List<Articles> articles;
 
 

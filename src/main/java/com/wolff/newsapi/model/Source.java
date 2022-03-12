@@ -1,5 +1,8 @@
 package com.wolff.newsapi.model;
 
+import javax.persistence.Table;
+
+@Table
 public class Source {
 
     private String id;

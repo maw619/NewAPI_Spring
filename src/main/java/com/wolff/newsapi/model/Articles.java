@@ -1,28 +1,47 @@
 package com.wolff.newsapi.model;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-public class Articles {
+import javax.persistence.*;
+import java.io.Serializable;
 
+@Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Articles implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
+    private Long articlesId;
+
+    @Embedded
+    @Column(columnDefinition = "Text")
     private Source source;
-
+    @Column(columnDefinition = "Text")
     private String author;
-
+    @Column(columnDefinition = "Text")
     private String title;
-
+    @Column(columnDefinition = "Text")
     private String description;
-
+    @Column(columnDefinition = "Text")
     private String url;
-
+    @Column(columnDefinition = "Text")
     private String urlToImage;
-
+    @Column(columnDefinition = "Text")
     private String publishedAt;
-
+    @Column(columnDefinition = "Text")
     private String content;
 
     public Articles(){
     }
 
+    public Long getArticlesId() {
+        return articlesId;
+    }
+
+    public void setArticlesId(Long articlesId) {
+        this.articlesId = articlesId;
+    }
 
     public Source getSource() {
         return source;

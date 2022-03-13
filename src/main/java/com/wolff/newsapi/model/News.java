@@ -1,18 +1,25 @@
 package com.wolff.newsapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
+@Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class News implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String status;
 
     private int totalResults;
 
+    @OneToMany(cascade=CascadeType.ALL)
     private List<Articles> articles;
 
 
